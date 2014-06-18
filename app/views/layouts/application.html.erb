@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DualBoot</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller_name %> <%= action_name %>">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">   <div class="container">
+      <div class="navbar-inner">
+     
+          <%= render 'layouts/navigation' %>
+        </div>
+      
+    </nav>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+        	<br><br><br>
+           <div class="row">
+            <div class="col-xs-12">
+            
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+		<br><br>
+		<small>A site by <span title="Head">Prashant</span>, <span title="Coder">Mithul</span>, <span title="Logo Designer">Krishna</span>, <span title="Finance Head">Krithika</span>, <span title="Finance Head">Gunavathi</span>, <span title="Finance Head">Aishwarya</span></small>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+    <!--[if !(lt IE 8)]><!--> 
+       
+               <!--<![endif]-->
+  </body>
+</html>
+
+
+  

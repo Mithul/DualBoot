@@ -1,1 +1,14 @@
-<h1>Site on Communal Riots</h1>
+<div class="row">
+	<div class="col-sm-9 col-xs-12">
+		<div class="jumbotron">
+			<h1>Communal Riots</h1>
+		</div>
+		<h1>Latest Article</h1>
+		<br>
+		<h2><%= @posts.first.title %></h2>
+        <%= simple_format(@posts.first.content)[0,650] %>... <%= link_to 'See more', @posts.first %>
+	</div>
+	<div class="col-xs-3 hidden-xs">
+		<%= render 'posts/postsSidebar' %>
+	</div>
+</div>

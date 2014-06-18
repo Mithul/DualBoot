@@ -1,16 +1,18 @@
-<h1>Listing posts</h1>
+<div class="jumbotron">
+  <h1>Articles</h1>
+</div>
     <% @posts.each do |post| %>
       <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12">
+          <div class="pull-right">
+            <ul class="list-inline">
+             <li><%= link_to 'Show', post %></li>
+              <li><%= link_to 'Edit', edit_post_path(post) %></li>
+              <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              </ul>
+          </div>
         <h1><%= post.title %></h1>
-        <%= simple_format(post.content) %>
-        </div>
-        <div class="col-xs-4">
-          <ul class="list-inline">
-           <li><%= link_to 'Show', post %></li>
-            <li><%= link_to 'Edit', edit_post_path(post) %></li>
-            <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-            </ul>
+        <%= simple_format(post.content)[0,400] %>... <%= link_to 'See more', post %>
         </div>
       </div>
     <% end %>

@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+      <div class="row">
+        <div class="col-xs-12">
+        <h1><%= link_to post.title, post %></h1>
+        <%= simple_format(post.content)[0,200] %>... <%= link_to 'See more', post %>
+        </div>
+      </div>
+    <% end %>
